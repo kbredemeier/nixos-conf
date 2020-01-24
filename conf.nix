@@ -11,6 +11,11 @@
     vim
   ];
 
+  # Ensure exFAT support.
+  boot.extraModulePackages = [
+    config.boot.kernelPackages.exfat-nofuse
+  ];
+
   # Networking.
   networking.hostName = "mindtree";
 
