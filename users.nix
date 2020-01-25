@@ -13,11 +13,11 @@
     extraGroups = [
       "wheel"
       "networkmanager"
+      "plugdev"
+      "vboxusers"
       # "storage"
       # "power"
-      # "plugdev"
       # "wireshark"
-      # "vboxusers"
     ];
   };
 }

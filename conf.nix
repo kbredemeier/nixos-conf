@@ -21,8 +21,10 @@
     reaper
     rustup
     soulseekqt
+    tree
     tmux
     vim
+    virtualbox
     vulkan-headers
     vulkan-loader
     vulkan-tools
