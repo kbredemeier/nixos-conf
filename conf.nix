@@ -16,6 +16,7 @@
     idris
     inkscape
     kicad
+    reaper
     rustup
     tmux
     vim
