@@ -3,6 +3,7 @@
   # Packages.
   environment.systemPackages = with pkgs; [
     cataclysm-dda
+    minecraft
     steam
   ];
 
