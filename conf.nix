@@ -11,6 +11,7 @@
     gdb
     gimp
     git
+    gnome3.adwaita-icon-theme
     gnome3.gnome-tweak-tool
     graphviz
     idris
