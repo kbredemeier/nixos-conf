@@ -6,6 +6,7 @@
   # Packages.
   environment.systemPackages = with pkgs; [
     firefox
+    git
     tmux
     wget
     vim
