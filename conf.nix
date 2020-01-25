@@ -6,6 +6,7 @@
   # Packages.
   environment.systemPackages = with pkgs; [
     arduino
+    deluge
     ffmpeg
     firefox
     gdb
@@ -19,6 +20,7 @@
     kicad
     reaper
     rustup
+    soulseekqt
     tmux
     vim
     vulkan-headers
