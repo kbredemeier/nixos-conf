@@ -12,7 +12,11 @@
   nixpkgs.config.allowUnfree = true;
 
   # Steam requirements.
-  hardware.opengl.driSupport32Bit = true;
-  hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
+  hardware.opengl = {
+    driSupport = true;
+    extraPackages = with pkgs; [ libva ];
+    driSupport32Bit = true;
+    extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
+  };
   hardware.pulseaudio.support32Bit = true;
 }
