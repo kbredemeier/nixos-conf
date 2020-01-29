@@ -3,6 +3,9 @@
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
+  # Use the latest linux kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Packages.
   environment.systemPackages = with pkgs; [
     arduino
@@ -25,10 +28,7 @@
     tmux
     vim
     virtualbox
-    vulkan-headers
-    vulkan-loader
     vulkan-tools
-    vulkan-validation-layers
     wget
   ];
 
