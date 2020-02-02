@@ -11,16 +11,18 @@
     arduino
     deluge
     ffmpeg
-    firefox
+    firefox-wayland
     gdb
     gimp
     git
+    glxinfo
     gnome3.adwaita-icon-theme
     gnome3.gnome-tweak-tool
     graphviz
     idris
     inkscape
     kicad
+    libva-utils
     reaper
     rustup
     soulseekqt
@@ -31,6 +33,16 @@
     vulkan-tools
     wget
   ];
+
+  # OpenGL (WebGL, video-accel).
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      libva
+      libvdpau-va-gl
+      vaapiVdpau
+    ];
+  };
 
   # Ensure exFAT support.
   boot.extraModulePackages = [
@@ -61,7 +73,4 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome3.enable = true;
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 }
