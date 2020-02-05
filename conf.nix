@@ -23,6 +23,7 @@
     inkscape
     kicad
     libva-utils
+    nodejs
     reaper
     rustup
     soulseekqt
