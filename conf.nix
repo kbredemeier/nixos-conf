@@ -31,6 +31,7 @@
     tmux
     vim
     virtualbox
+    vlc
     vulkan-tools
     wget
   ];
