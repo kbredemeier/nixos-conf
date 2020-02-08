@@ -15,6 +15,7 @@
       "networkmanager"
       "plugdev"
       "vboxusers"
+      "jackaudio"
       # "storage"
       # "power"
       # "wireshark"

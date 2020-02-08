@@ -27,6 +27,7 @@
     reaper
     rustup
     soulseekqt
+    supercollider
     tree
     tmux
     vim
