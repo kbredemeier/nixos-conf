@@ -9,9 +9,13 @@
   # Packages.
   environment.systemPackages = with pkgs; [
     arduino
+    cmatrix
     deluge
+    exercism
     ffmpeg
     firefox-wayland
+    fractal
+    gcolor3
     gdb
     gimp
     git
@@ -19,22 +23,27 @@
     gnome3.adwaita-icon-theme
     gnome3.gnome-tweak-tool
     graphviz
-    idris
     inkscape
     kicad
     libva-utils
     nodejs
+    protonvpn-cli
     reaper
     rustup
+    screen # to login to chip via serial
+    signal-desktop
     soulseekqt
+    spotify
     supercollider
     tree
     tmux
-    vim
-    virtualbox
+    usbutils # lsusb
+    vim_configurable
     vlc
     vulkan-tools
     wget
+    wireshark
+    xournal
   ];
 
   # OpenGL (WebGL, video-accel).
@@ -47,19 +56,23 @@
     ];
   };
 
-  # Ensure exFAT support.
-  boot.extraModulePackages = [
-    config.boot.kernelPackages.exfat-nofuse
-  ];
-
   # Networking.
   networking.hostName = "mindtree";
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [
+    # Ether dream DAC communication.
+    7765
+  ];
+  networking.firewall.allowedUDPPorts = [
+    # Ether dream DAC broadcasts.
+    7654
+    # nannou OSC example.
+    34254
+  ];
+
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # Enable bluetooth.
   hardware.bluetooth.enable = true;
@@ -76,4 +89,7 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome3.enable = true;
+
+  # Enable wireshark.
+  programs.wireshark.enable = true;
 }

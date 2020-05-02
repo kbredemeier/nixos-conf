@@ -16,9 +16,9 @@
       "plugdev"
       "vboxusers"
       "jackaudio"
+      "wireshark"
       # "storage"
       # "power"
-      # "wireshark"
     ];
   };
 }
