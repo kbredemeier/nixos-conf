@@ -1,12 +1,8 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    virtualbox
-  ];
-  
   # Virtualbox
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+  users.extraGroups.vboxusers.members = [ "mindtree" ];
 
   # Oracle Extensions
   nixpkgs.config.allowUnfree = true;
