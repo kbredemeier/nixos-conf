@@ -21,8 +21,10 @@
     git
     glxinfo
     gnome3.adwaita-icon-theme
+    gnome3.gnome-books
     gnome3.gnome-tweak-tool
     graphviz
+    inetutils # ftp for working with dante brooklyn II
     inkscape
     kicad
     libva-utils
@@ -90,6 +92,19 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome3.enable = true;
 
+  # Gnome 3 trackers for indexing e-books.
+  services.gnome3.tracker.enable = true;
+  services.gnome3.tracker-miners.enable = true;
+
   # Enable wireshark.
   programs.wireshark.enable = true;
+
+  # Teensy MCU UDEV rules.
+  services.udev.extraRules = ''
+    # UDEV rules for Teensy USB devices
+    ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}="1"
+    ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789A]?", ENV{MTP_NO_PROBE}="1"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789ABCD]?", MODE:="0666"
+    KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", MODE:="0666"
+  '';
 }
