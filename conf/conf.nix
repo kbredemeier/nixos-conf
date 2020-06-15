@@ -9,13 +9,11 @@
   # Packages.
   environment.systemPackages = with pkgs; [
     arduino
-    cmatrix
     deluge
     exercism
     ffmpeg
     firefox-wayland
     fractal
-    gcolor3
     gdb
     gimp
     git
