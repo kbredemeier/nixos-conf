@@ -5,13 +5,17 @@ stdenv.mkDerivation {
   buildInputs = [
     alsaLib
     binutils
+    cargo-deps # visualise dep graph
+    cargo-generate # wasm tute
     cmake
     gcc
     gnumake
+    graphviz # visualise dep graph (cargo-deps)
     kcachegrind
-    libGL # for camera_capture example
+    libGL # For camera_capture example.
     libv4l # video4linux
     libudev
+    nodejs # For Rust+JS+WASM dev.
     openssl
     pkgconfig
     python3
@@ -26,6 +30,7 @@ stdenv.mkDerivation {
     xorg.libXcursor
     xorg.libXi
     xorg.libXrandr
+    wasm-pack # For building, testing, publishing rust-generated wasm.
   ];
   LD_LIBRARY_PATH = "${vulkan-loader}/lib:${xorg.libX11}/lib:${xorg.libXcursor}/lib:${xorg.libXi}/lib:${xorg.libXrandr}/lib:${libGL}/lib:$LD_LIBRARY_PATH";
   ALSA_LIB_DEV = "${alsaLib.dev}"; #
