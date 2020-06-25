@@ -25,6 +25,7 @@
     inetutils # ftp for working with dante brooklyn II
     inkscape
     kicad
+    libreoffice
     libva-utils
     nodejs
     protonvpn-cli
@@ -105,4 +106,9 @@
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789ABCD]?", MODE:="0666"
     KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", MODE:="0666"
   '';
+
+  # Add the laser sollinger root CA certificate for their git server.
+  security.pki.certificates = [
+    (builtins.readFile /etc/ssl/certs/LA-root-CA.crt)
+  ];
 }
