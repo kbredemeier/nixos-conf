@@ -6,6 +6,7 @@ stdenv.mkDerivation {
     binutils
     gcc-arm-embedded
     jq
+    openocd # On-Chip Debugging
     teensy-loader-cli
   ];
 }
