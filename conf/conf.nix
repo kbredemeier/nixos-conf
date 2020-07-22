@@ -8,19 +8,23 @@
 
   # Packages.
   environment.systemPackages = with pkgs; [
-    arduino
+    (arduino.override { withTeensyduino = true; })
+    blender
     deluge
     exercism
     ffmpeg
+    flatpak-builder # required by gnome-builder for building gnome-music
     firefox-wayland
     fractal
     gdb
     gimp
     git
     glxinfo
+    gnome-builder
     gnome3.adwaita-icon-theme
     gnome3.gnome-books
     gnome3.gnome-tweak-tool
+    gnome3.gnome-power-manager
     graphviz
     inetutils # ftp for working with dante brooklyn II
     inkscape
@@ -28,6 +32,7 @@
     libreoffice
     libva-utils
     nodejs
+    obinskit # Anne Pro 2 configuration.
     protonvpn-cli
     reaper
     rustup
@@ -36,6 +41,8 @@
     soulseekqt
     spotify
     supercollider
+    sysprof
+    teensyduino # temporarily testing tmcstepper lib
     tree
     tmux
     usbutils # lsusb
@@ -105,6 +112,16 @@
     ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789A]?", ENV{MTP_NO_PROBE}="1"
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789ABCD]?", MODE:="0666"
     KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", MODE:="0666"
+
+    # UDEV rules for the ST-LINK/V2.1.
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374a", MODE:="0666", SYMLINK+="stlinkv2-1_%n"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", MODE:="0666", SYMLINK+="stlinkv2-1_%n"
+
+    # UDEV rules for the ST-LINK/V1. (Unsure if working)
+    ATTRS{idProduct}=="3744", ATTRS{idVendor}=="0483", MODE="666", GROUP="plugdev"
+
+    # UDEV rules (total guess) for the Hitex programmer on the stm32-comstick. (Never worked)
+    ATTRS{idProduct}=="0033", ATTRS{idVendor}=="0640", MODE="666", GROUP="plugdev"
   '';
 
   # Add the laser sollinger root CA certificate for their git server.
