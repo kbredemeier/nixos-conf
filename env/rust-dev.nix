@@ -15,6 +15,7 @@ stdenv.mkDerivation {
     libGL # For camera_capture example.
     libv4l # video4linux
     libudev
+    libusb # For compiling probe-rs.
     nodejs # For Rust+JS+WASM dev.
     openssl
     pkgconfig
