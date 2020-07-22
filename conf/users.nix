@@ -11,11 +11,12 @@
     hashedPassword = "$6$mindtree$VYHsIVYocBAFdtWXiZLX2snVDqBGjv9mbJylf5RDMjm3cTALnk1hMyMsdmYET8FzffBlcyqOA.BoqEYFdmjum.";
     openssh.authorizedKeys.keys = [];
     extraGroups = [
-      "wheel"
+      "dialout"
+      "jackaudio"
       "networkmanager"
       "plugdev"
       "vboxusers"
-      "jackaudio"
+      "wheel"
       "wireshark"
       # "storage"
       # "power"
