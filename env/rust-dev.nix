@@ -5,6 +5,7 @@ stdenv.mkDerivation {
   buildInputs = [
     alsaLib
     binutils
+    cargo-bloat # What occuppies binary size?
     cargo-deps # visualise dep graph
     cargo-generate # wasm tute
     cmake
@@ -12,6 +13,7 @@ stdenv.mkDerivation {
     gnumake
     graphviz # visualise dep graph (cargo-deps)
     kcachegrind
+    libftdi1 # A lib for communicating with FTDI chips, currently necessary to compile probe-rs.
     libGL # For camera_capture example.
     libv4l # video4linux
     libudev
