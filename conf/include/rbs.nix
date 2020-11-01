@@ -5,6 +5,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ../audio.nix
     ../conf.nix
     ../intel.nix
     ../gaming.nix

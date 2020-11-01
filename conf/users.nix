@@ -12,7 +12,6 @@
     openssh.authorizedKeys.keys = [];
     extraGroups = [
       "dialout"
-      "jackaudio"
       "networkmanager"
       "plugdev"
       "vboxusers"

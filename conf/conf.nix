@@ -25,22 +25,23 @@
     gnome3.gnome-books
     gnome3.gnome-tweak-tool
     gnome3.gnome-power-manager
+    gnome3.gnome-todo
     graphviz
     inetutils # ftp for working with dante brooklyn II
     inkscape
+    ipfs
     kicad
     libreoffice
     libva-utils
+    netcat # For sending basic TCP packets.
     nodejs
-    obinskit # Anne Pro 2 configuration.
+    #obinskit # Anne Pro 2 configuration.
     protonvpn-cli
-    reaper
     rustup
     screen # to login to chip via serial
     signal-desktop
     soulseekqt
     spotify
-    supercollider
     sysprof
     teensyduino # temporarily testing tmcstepper lib
     tree
