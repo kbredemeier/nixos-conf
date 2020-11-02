@@ -8,7 +8,7 @@ Collection of useful nix expressions.
 - `./env/` - useful shells, normally development environments, ready for use
   with `nix-shell <path>`.
 - `./home/home.nix` - All user-specific configuration including packages and
-  dotfiles. This is the file pointed to by `./confo/home-manager.nix` for the
+  dotfiles. This is the file pointed to by `./conf/home-manager.nix` for the
   main home-manager config.
 
 ## Usage
@@ -29,4 +29,10 @@ channel. Check the version matches the desired nixos version.
 ```
 $ nix-channel --add https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
 $ nix-channel --update home-manager
+```
+
+Now build a new generation and switch to it.
+
+```
+$ sudo nixos-rebuild switch
 ```
