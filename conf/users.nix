@@ -14,11 +14,8 @@
       "dialout"
       "networkmanager"
       "plugdev"
-      "vboxusers"
       "wheel"
       "wireshark"
-      # "storage"
-      # "power"
     ];
   };
 }
