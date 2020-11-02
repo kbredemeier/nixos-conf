@@ -7,9 +7,10 @@
   imports = [
     ../audio.nix
     ../conf.nix
+    ../home-manager.nix
     ../intel.nix
     ../gaming.nix
     ../users.nix
-    ../virtualbox.nix
+    # ../virtualbox.nix
   ];
 }

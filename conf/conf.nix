@@ -6,55 +6,6 @@
   # Use the latest linux kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Packages.
-  environment.systemPackages = with pkgs; [
-    (arduino.override { withTeensyduino = true; })
-    blender
-    deluge
-    exercism
-    ffmpeg
-    flatpak-builder # required by gnome-builder for building gnome-music
-    firefox-wayland
-    fractal
-    gdb
-    gimp
-    git
-    glxinfo
-    gnome-builder
-    gnome3.adwaita-icon-theme
-    gnome3.gnome-books
-    gnome3.gnome-tweak-tool
-    gnome3.gnome-power-manager
-    gnome3.gnome-todo
-    graphviz
-    inetutils # ftp for working with dante brooklyn II
-    inkscape
-    ipfs
-    kicad
-    libreoffice
-    libva-utils
-    netcat # For sending basic TCP packets.
-    nodejs
-    #obinskit # Anne Pro 2 configuration.
-    protonvpn-cli
-    rustup
-    screen # to login to chip via serial
-    signal-desktop
-    soulseekqt
-    spotify
-    sysprof
-    teensyduino # temporarily testing tmcstepper lib
-    tree
-    tmux
-    usbutils # lsusb
-    vim_configurable
-    vlc
-    vulkan-tools
-    wget
-    wireshark
-    xournal
-  ];
-
   # OpenGL (WebGL, video-accel).
   hardware.opengl = {
     enable = true;
@@ -66,22 +17,25 @@
   };
 
   # Networking.
-  networking.hostName = "mindtree";
-
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [
-    # Ether dream DAC communication.
-    7765
-  ];
-  networking.firewall.allowedUDPPorts = [
-    # Ether dream DAC broadcasts.
-    7654
-    # nannou OSC example.
-    34254
-  ];
-
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  networking = {
+    hostName = "mindtree";
+    # Open ports in the firewall.
+    firewall = {
+      # TODO: Don't quite remember why this was disabled... re-enable after
+      # current major projects finished.
+      enable = false;
+      allowedTCPPorts = [
+        # Ether dream DAC communication.
+        7765
+      ];
+      allowedUDPPorts = [
+        # Ether dream DAC broadcasts.
+        7654
+        # nannou OSC example.
+        34254
+      ];
+    };
+  };
 
   # Enable bluetooth.
   hardware.bluetooth.enable = true;
