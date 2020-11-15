@@ -4,7 +4,8 @@ Collection of useful nix expressions.
 
 - `./conf/` - expressions useful for system configuration.
 - `./conf/include/` - pre-curated sets of system configuration expressions ready
-  for importing into `/etc/nixos/configuration.nix`.
+  for importing into `/etc/nixos/configuration.nix`, normally for specific
+  personal devices.
 - `./env/` - useful shells, normally development environments, ready for use
   with `nix-shell <path>`.
 - `./home/home.nix` - All user-specific configuration including packages and
@@ -27,12 +28,29 @@ If the chosen config requires `home-manager`, first add the necessary nix
 channel. Check the version matches the desired nixos version.
 
 ```
-$ nix-channel --add https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
-$ nix-channel --update home-manager
+$ sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
 ```
 
-Now build a new generation and switch to it.
+Update the nixos and home-manager channels:
+
+```
+$ sudo nix-channel --update
+```
+
+Now install the configuration:
+
+```
+$ sudo nixos-install
+```
+
+Reboot, and we should be good to go!
+
+From here, we can build a new generation and switch to it at any point with.
 
 ```
 $ sudo nixos-rebuild switch
 ```
+
+We can also now use `chown` to give `mindtree` permissions to read/write all
+files in the new `mindtree` directory. Not essential, but makes things easier.
+Otherwise just use sudo when writing to the `/etc/nixos` files.
