@@ -4,7 +4,7 @@
   time.timeZone = "Europe/Berlin";
 
   # Use the latest linux kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_testing;
 
   # OpenGL (WebGL, video-accel).
   hardware.opengl = {
