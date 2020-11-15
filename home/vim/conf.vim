@@ -63,6 +63,8 @@ set laststatus=2
 
 " Keep all backup and temp files in the same place
 set backup
+call mkdir($HOME . "/.vim/backup", "p", 0700)
+call mkdir($HOME . "/.vim/tmp", "p", 0700)
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 
@@ -122,7 +124,7 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 
 " Strip whitespace from ends of lines when saving certain types of files.
-autocmd BufWritePre *.rs,*.txt,*.md,*.pl,*.apl,*.idr,*.h,*.hpp,*.cpp,*.c,*.toml :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.rs,*.txt,*.md,*.pl,*.apl,*.idr,*.h,*.hpp,*.cpp,*.c,*.toml,*.nix :call <SID>StripTrailingWhitespaces()
 
 " ---------------------------------------------------------
 " Colors

@@ -6,6 +6,8 @@
     ./bash.nix
     ./firefox.nix
     ./git.nix
+    #./gnome-terminal.nix
+    ./gtk.nix
     ./soulseekqt.nix
     ./spotify.nix
     #./teensyduino.nix
@@ -28,7 +30,7 @@
       glxinfo
       gnome-builder
       gnome3.adwaita-icon-theme
-      gnome3.gnome-books
+      # gnome3.gnome-books
       gnome3.gnome-tweak-tool
       gnome3.gnome-power-manager
       gnome3.gnome-todo
@@ -36,17 +38,20 @@
       inetutils # ftp for working with dante brooklyn II
       inkscape
       ipfs
+      iw # For trying to debug why my wifi device won't show
       kicad
       libreoffice
       libva-utils
       netcat # For sending basic TCP packets.
       nixfmt
       nodejs
+      pciutils # Provides lspci - added to debug wifi not working
       #obinskit # Anne Pro 2 configuration.
       protonvpn-cli
       rustup
       screen # to login to chip via serial
       signal-desktop
+      sysbench
       sysprof
       tree
       usbutils # lsusb
