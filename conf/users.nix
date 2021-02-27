@@ -11,9 +11,11 @@
     hashedPassword = "$6$mindtree$VYHsIVYocBAFdtWXiZLX2snVDqBGjv9mbJylf5RDMjm3cTALnk1hMyMsdmYET8FzffBlcyqOA.BoqEYFdmjum.";
     openssh.authorizedKeys.keys = [];
     extraGroups = [
+      "audio"
       "dialout"
       "networkmanager"
       "plugdev"
+      "power"
       "wheel"
       "wireshark"
     ];

@@ -5,24 +5,30 @@
 { config, pkgs, ... }:
 let
   # TODO: Switch to a stable nixos-hardware channel once this has landed.
+  # nixos-hardware = /home/mindtree/programming/nix/nixos-hardware;
   nixos-hardware = builtins.fetchGit {
     url = "https://github.com/mitchmindtree/nixos-hardware.git";
-    ref = "xps-9310-no-wifi";
-    rev = "c3f2189bf172888219542cce1e29916b961514fa";
-    # Change to this branch and the `rev` of the latest commit on that branch
-    # to test wi-fi.
-    # ref = "xps-9310";
+    ref = "xps-9310";
+    rev = "f361f64db031dcc13e7d3bfe0c2e939ba220e7aa";
   };
 in
   {
     imports = [
       ''${nixos-hardware}/dell/xps/13-9310''
+      ../audio.nix
       ../conf.nix
+      ../gaming.nix
       ../home-manager.nix
-      ../intel.nix
       ../users.nix
     ];
 
     # XPS 13 9310 requires unfree firmware for wifi/bluetooth.
     nixpkgs.config.allowUnfree = true;
+
+    # Enable Intel's Hybrid Driver.
+    nixpkgs.config.packageOverrides = pkgs: {
+      vaapiIntel = pkgs.vaapiIntel.override {
+        enableHybridCodec = true;
+      };
+    };
   }

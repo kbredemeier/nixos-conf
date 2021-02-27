@@ -3,28 +3,19 @@
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
-  # Use the latest linux kernel.
-  boot.kernelPackages = pkgs.linuxPackages_testing;
-
   # OpenGL (WebGL, video-accel).
-  hardware.opengl = {
-    enable = true;
-    extraPackages = with pkgs; [
-      libva
-      libvdpau-va-gl
-      vaapiVdpau
-    ];
-  };
+  hardware.opengl.enable = true;
 
   # Networking.
   networking = {
     hostName = "mindtree";
     # Open ports in the firewall.
     firewall = {
-      # TODO: Don't quite remember why this was disabled... re-enable after
-      # current major projects finished.
-      enable = false;
       allowedTCPPorts = [
+        # MORPH node comms.
+        10101
+        # MORPH & REFLECT Taggenbrunn shutdown signal.
+        10102
         # Ether dream DAC communication.
         7765
       ];
@@ -33,6 +24,8 @@
         7654
         # nannou OSC example.
         34254
+        # MORPH OSC recv.
+        9000
       ];
     };
   };
