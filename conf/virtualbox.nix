@@ -6,6 +6,5 @@
   users.extraUsers.mindtree.extraGroups = [ "vboxusers" ];
 
   # Oracle Extensions
-  nixpkgs.config.allowUnfree = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
 }

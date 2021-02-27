@@ -22,9 +22,6 @@ in
       ../users.nix
     ];
 
-    # XPS 13 9310 requires unfree firmware for wifi/bluetooth.
-    nixpkgs.config.allowUnfree = true;
-
     # Enable Intel's Hybrid Driver.
     nixpkgs.config.packageOverrides = pkgs: {
       vaapiIntel = pkgs.vaapiIntel.override {

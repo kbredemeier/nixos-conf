@@ -1,9 +1,5 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
-  # Steam requires unfree.
-  # TODO: Work out how to make this specifically just steam.
-  nixpkgs.config.allowUnfree = true;
-
   # Steam requirements.
   hardware = {
     opengl = {
@@ -17,4 +13,11 @@
 
   # Includes the package along with "a few other workarounds" like controller support.
   programs.steam.enable = true;
+
+  # Allow unfree steam packages.
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam"
+    "steam-original"
+    "steam-runtime"
+  ];
 }

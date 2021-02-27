@@ -3,5 +3,4 @@
     (arduino.override { withTeensyduino = true; })
     teensyduino
   ];
-  nixpkgs.config.allowUnfree = true;
 }
