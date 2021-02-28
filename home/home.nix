@@ -1,11 +1,11 @@
 # Top-level expression for inclusion in
 # `/home/mindtree/.config/nixpkgs/home.nix`
-{ config, pkgs, lib, ... }:
-{
+{ config, pkgs, lib, ... }: {
   imports = [
     ./bash.nix
     ./firefox.nix
     ./git.nix
+    ./gaming.nix
     ./gnome-terminal.nix
     ./gtk.nix
     #./teensyduino.nix
@@ -30,6 +30,7 @@
       gnome3.gnome-power-manager
       gnome3.gnome-todo
       gnome3.gnome-tweak-tool
+      gnomeExtensions.gsconnect
       graphviz
       gst_all_1.gst-libav # trying to get AIFF files working in nautilus preview
       gst_all_1.gst-plugins-bad # trying to get AIFF files working in nautilus preview
@@ -48,7 +49,6 @@
       pciutils # Provides lspci - added to debug wifi not working
       platformio # For running daniel's arduino sketch for morph power supply mgmt.
       protonvpn-cli
-      protontricks
       rustup
       screen # to login to chip via serial
       signal-desktop
@@ -63,13 +63,7 @@
       vlc
       vulkan-tools
       wget
-      wine-staging # For testing `auracle` sound card control software from iConnectivity.
       wireshark
-
-      # TODO Move these to a separate gaming list.
-      cataclysm-dda
-      lutris
-      minecraft
     ];
 
     # Add some dirs to PATH.
