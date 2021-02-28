@@ -19,6 +19,10 @@
         # Ether dream DAC communication.
         7765
       ];
+      allowedTCPPortRanges = [
+        # GSConnect
+        { from = 1714; to = 1764; }
+      ];
       allowedUDPPorts = [
         # Ether dream DAC broadcasts.
         7654
@@ -26,6 +30,10 @@
         34254
         # MORPH OSC recv.
         9000
+      ];
+      allowedUDPPortRanges = [
+        # GSConnect
+        { from = 1714; to = 1764; }
       ];
     };
   };
