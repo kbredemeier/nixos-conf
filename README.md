@@ -13,7 +13,7 @@ Clone into the nix configuration directory.
 
 ```
 $ cd /etc/nixos/
-$ git clone git@github.com:mitchmindtree/nixconf.git mindtree
+$ git clone git@github.com:mitchmindtree/nixos-conf.git mindtree
 ```
 
 Add `./mindtree/conf/include/<choose_a_config>.nix` to the imports within
