@@ -6,11 +6,6 @@ Collection of useful nix expressions.
 - `./conf/include/` - pre-curated sets of system configuration expressions ready
   for importing into `/etc/nixos/configuration.nix`, normally for specific
   personal devices.
-- `./env/` - useful shells, normally development environments, ready for use
-  with `nix-shell <path>`.
-- `./home/home.nix` - All user-specific configuration including packages and
-  dotfiles. This is the file pointed to by `./conf/home-manager.nix` for the
-  main home-manager config.
 
 ## Usage
 
@@ -44,6 +39,9 @@ $ sudo nixos-install
 ```
 
 Reboot, and we should be good to go!
+
+Custom config for home-manager should automatically get pulled from
+[mitchmindtree/mindtree-home](https://github.com/mitchmindtree/mindtree-home).
 
 From here, we can build a new generation and switch to it at any point with.
 
