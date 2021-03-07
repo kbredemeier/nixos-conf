@@ -1,5 +1,5 @@
 # Enables `home-manager` module for home config.
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   # Where the local repo is stored.
   local-repo = /home/mindtree/programming/nix/mindtree-home;

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -40,14 +40,6 @@
 
   # Enable bluetooth.
   hardware.bluetooth.enable = true;
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-    # Full pulseaudio pkg to get bluetooth support.
-    package = pkgs.pulseaudioFull;
-  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;

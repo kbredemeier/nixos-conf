@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   # Ensure the users on the system match the set in `users.users`.
   users.mutableUsers = false;
