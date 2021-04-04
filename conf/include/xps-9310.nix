@@ -4,7 +4,7 @@
 # Made specifically for personal use with the late 2020 Dell XPS 13 9310.
 { config, pkgs, ... }: {
   imports = [
-    <nixos-hardware/dell/xps/13-9310>
+    ''${(import ../channels.nix).nixos-hardware}/dell/xps/13-9310''
     ../audio.nix
     ../conf.nix
     ../gaming.nix

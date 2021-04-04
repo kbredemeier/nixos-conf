@@ -22,7 +22,10 @@ let
     # Enable the desktop environment.
     mindtree.de.enable = true;
   };
+
 in {
-  imports = [ <home-manager/nixos> ];
+  imports = [
+    ''${(import ./channels.nix).home-manager}/nixos''
+  ];
   home-manager.users.mindtree = mindtree-home;
 }
